@@ -1,11 +1,14 @@
 .App {
+  position:relative;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -13,7 +16,7 @@
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,7 +25,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -36,3 +39,98 @@
     transform: rotate(360deg);
   }
 }
+
+.bookist{
+  width: 100%;
+  height: 10vh;
+  color: teal;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.search-bar{
+  height: 5vh;
+  width: 100%;
+  position: relative;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar-buttons{
+  position: relative;
+  margin-left: 20px;
+}
+
+.main-section{
+  position:relative;
+  width: 100%;
+  height: 85vh;
+  background: grey;
+  /* border-right: 1px solid black; */
+}
+
+.book-list{
+  float: left;
+  width: 80%;
+  height: 100%;
+  /* display: inline;
+  flex-direction: row;
+  flex-wrap: wrap; */
+  background-color: lightgrey;
+}
+
+img {
+  width: 150px;
+  height: 200px;
+}
+
+.book-title-text{
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+.books{
+  position: relative;
+}
+
+.individual-book{
+  width: 150px;
+  position: relative;
+  display: inline-block;
+  flex-direction: column;
+  flex-wrap: wrap;
+  word-wrap: normal;
+  padding: 10px;
+}
+
+.shelf{
+  width: 19.8%;
+  float: right;
+  height: 100%;
+  background-color: lightgrey;
+  
+}
+
+.shelf-items{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.shelf-button {
+  width: 100px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+
+
+
