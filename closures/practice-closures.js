@@ -9,10 +9,17 @@
   */
   
   //CODE HERE
-
+function myFunc() {
+  let myStr = 'super secret string';
+  function getSecretString(){
+    return `${myStr}`;
+  }
+  return getSecretString;
+}
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
+  var secretString = myFunc()
   //CODE HERE
   
   
@@ -29,27 +36,40 @@
   */
   
   //CODE HERE
-
+function lightSwitch (){
+  var isTheLightOn = false;
+  function flipTheSwitch(){
+    isTheLightOn = !isTheLightOn;
+    if(isTheLightOn === true){
+      return `The light is on`
+    } else if(isTheLightOn === false){
+      return `The light is off`
+    }
+  }
+  return flipTheSwitch;
+}
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
-  //CODE HERE
 
+  //CODE HERE
+  var kitchenSwitch = lightSwitch()
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
-  
+  kitchenSwitch()
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
-  
+  var bathroomSwitch = lightSwitch()
   
   //Invoke bathroomSwitch twice.
   
   //CODE HERE
-
+  bathroomSwitch()
+  bathroomSwitch()
   
   
   ////////////PROBLEM 3////////////
@@ -64,7 +84,22 @@
   */
 
   //CODE HERE
+var plantTracker = function() {
+  this.plant = 'fern';
+  this.height = 12;
 
+  return {
+    readInfo: function(){
+      return `This is a ${plant} plant that is ${height} inches tall.`
+    },
+    waterPlant: function(){
+      return (height += 1);
+    },
+    prunePlant: function(){
+      return (height -= 1);
+    }
+  }
+}
 
   ////////////PROBLEM 4////////////
 
@@ -79,18 +114,34 @@
   */
 
   //CODE HERE
+var inventory = function(){
+  this.products = [];
 
+  return {
+    readProducts: function(){
+      return products;
+    },
+    addToProducts: function(str){
+      products.push(str);
+    },
+    deleteFromProducts: function(str1){
+      let i = products.findIndex(str1)
+      products.splice(i, 1)
+    }
+  }
+}
 
   /*
     Create a variable called 'shoes' whose value is the invocation of inventory.
   */
 
   //CODE HERE
-
+ var shoes = inventory();
 
   /*
     Add an item to your shoes array using the addToProducts function
   */
 
   //CODE HERE
-
+shoes.addToProducts('Nikes')
+console.log(shoes)
