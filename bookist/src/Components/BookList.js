@@ -3,13 +3,24 @@ import data from '../data'
 import Book from './Book'
 
 class BookList extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state={
             books: data,
-            index: 0
-        }
+            index: 0,
+            shelf: []
+        };
+
+        this.addToShelf = this.addToShelf.bind(this)
+    }
+
+    addToShelf(index){
+        let updatedShelf = this.state.shelf.slice()
+        updatedShelf.push({title: this.state.books[index].title})
+
+        this.setState({shelf: updatedShelf})
+        console.log(this.state.shelf)
     }
 
     render(){
@@ -19,7 +30,8 @@ class BookList extends Component{
                 {/* <Book books={this.state.books} index={this.state.index}/> */}
                 { this.state.books.map((element, index) => (
                     <div className='individual-book' key={index}>
-                        <img src={element.img} alt={element.title}/>
+                        <img src={element.img} alt={element.title}
+                        onClick={e => this.addToShelf(index)}/>
                         <p className='book-title-text'>{element.title}</p>
                     </div>
                 )) }
