@@ -23,6 +23,10 @@ class SearchBar extends Component{
         this.setState({filterBooks: val})
     }
 
+    filterReset(value){
+        this.setState({userInput: ''})
+    }
+
 
     render(){
         let bookList = this.state.books
@@ -34,9 +38,12 @@ class SearchBar extends Component{
         });
         return (
             <div>
-                <input value={this.state.userInput} onChange={event => this.handleUserInput(event)}/>
+                <input id='myInput' value={this.state.userInput} onChange={event => this.handleUserInput(event)}/>
                 <button className='search-bar-buttons' onClick={e => this.filterBooks(this.state.userInput)}>search</button>
-                <button className='search-bar-buttons'>clear search</button>
+                <button className='search-bar-buttons'
+                onClick={value => this.filterReset(value)}>
+                    Clear Search
+                </button>
                 <div>
                     {bookList}
                 </div>  
